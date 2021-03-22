@@ -5,6 +5,7 @@ import 'package:widgetlibrary/icicicard/icici_card.dart';
 import 'package:widgetlibrary/sliding_listview.dart';
 import 'animateButton.dart';
 import 'camera_plugin.dart';
+import 'drawerStackWidget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -129,99 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 10,
                 ),
                 Text('Drawer in a Stack Widget'),
-                SizedBox(
-                  height: 150,
-                  child: Stack(
-                    //fit: StackFit.loose,
-                    children: [
-                      Positioned(
-                          left: 0,
-                          top: 0,
-                          child: enableMenu
-                              ? SizedBox(
-                                  width: widthStack,
-                                  height:
-                                      150, //MediaQuery.of(context).size.height - 40,
-                                  child: ListView(
-                                    children: [
-                                      TextButton(
-                                        child: Text('Home'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text('Apply Now'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text('Passbook'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text('Contact us'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text('Calculator'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text('Inbox'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text('Safety Tips'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text('Change Login pin'),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                        child: Text(
-                                          'Disable FingerPrints',
-                                        ),
-                                        onPressed: () {},
-                                      ),
-                                      TextButton(
-                                          onPressed: () {},
-                                          child: Text('Contact Us'))
-                                    ],
-                                  ),
-                                )
-                              : Container()),
-                      Positioned(
-                        left: widthStack,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    enableMenu = !enableMenu;
-                                    if (enableMenu) {
-                                      setState(() {
-                                        widthStack = 150;
-                                      });
-                                    } else {
-                                      setState(() {
-                                        widthStack = 0;
-                                      });
-                                    }
-                                  });
-                                },
-                                icon: Icon(Icons.horizontal_split_rounded)),
-                            Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 30,
-                              color: Colors.blueAccent,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DrawerStackWidget()));
+                    },
+                    child: Text("Drawer Widget in a Stack")),
                 Text('Icon Animation'),
                 AnimateButton(duration: Duration(milliseconds: 450)),
                 ElevatedButton(
@@ -254,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AccountCard()),
+                        MaterialPageRoute(builder: (context) => AccountCards()),
                       );
                     },
                     child: Text('ICICI Card')),
