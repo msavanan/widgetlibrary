@@ -10,3 +10,4 @@ Code need some use case currently the Widget library has few Widgets like
 5) Icon Animation
 6) Camera
 7) Sliding List View (animation works - background color need to be fixed to resemble close to uber)
+8) ICICI Card
