@@ -15,7 +15,7 @@ class _SlidingListViewState extends State<SlidingListView>
   void initState() {
     super.initState();
     controller =
-        new AnimationController(duration: Duration(seconds: 10), vsync: this)
+        new AnimationController(duration: Duration(seconds: 120), vsync: this)
           ..addListener(() => setState(() {}));
     animation = Tween<Offset>(begin: Offset(0, 0), end: Offset(0, 0))
         .animate(controller);
@@ -32,7 +32,7 @@ class _SlidingListViewState extends State<SlidingListView>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: showListView ? Color(0xFF727272) : Colors.white,
         body: Column(
           children: [
             Container(
@@ -76,6 +76,7 @@ class _SlidingListViewState extends State<SlidingListView>
                     offset: animation.value,
                     child: Container(
                       //decoration: BoxDecoration(border: Border.all()),
+                      color: Colors.white,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

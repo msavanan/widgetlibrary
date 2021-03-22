@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetlibrary/grouped_buttons.dart';
+import 'package:widgetlibrary/icicicard/icici_card.dart';
 import 'package:widgetlibrary/sliding_listview.dart';
 import 'animateButton.dart';
 import 'camera_plugin.dart';
@@ -237,6 +238,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     },
                     child: Text("Camera - Click me")),
+                Text('Sliding ListView'),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -247,7 +249,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text('Sliding ListView'),
-                )
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AccountCard()),
+                      );
+                    },
+                    child: Text('ICICI Card')),
               ],
             ),
           ),
