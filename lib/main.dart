@@ -6,6 +6,7 @@ import 'package:widgetlibrary/sliding_listview.dart';
 import 'animateButton.dart';
 import 'camera_plugin.dart';
 import 'drawerStackWidget.dart';
+import 'location.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,9 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
   bool enableMenu = false;
   double widthStack = 0;
 
+  Location newLocation = Location();
+
+  List<double> loc = [0, 0];
+
   @override
   void initState() {
     super.initState();
+    newLocation.getCurrentLocation();
   }
 
   @override
@@ -172,6 +178,32 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     },
                     child: Text('ICICI Card')),
+                Text('GPS position'),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  child: TextButton(
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.amberAccent),
+                      onPressed: () async {
+                        try {
+                          if (newLocation.longitude == null ||
+                              newLocation.latitude == null) {
+                            await newLocation.getCurrentLocation();
+                          }
+                          setState(() {
+                            loc[0] = newLocation.longitude;
+                            loc[1] = newLocation.latitude;
+                          });
+                        } catch (e) {
+                          print(
+                              '${newLocation.latitude}, ${newLocation.longitude}');
+                        }
+                        print(
+                            '${newLocation.latitude}, ${newLocation.longitude}');
+                      },
+                      child: Text('${loc[0] ?? 0}, ${loc[1] ?? 0}')),
+                )
               ],
             ),
           ),
