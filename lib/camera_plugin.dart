@@ -72,7 +72,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        // child: Icon(Icons.camera_alt),
+        child: Icon(Icons.camera_alt),
         onPressed: () async {
           try {
             await _initializeControllerFuture;
