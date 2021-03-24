@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:widgetlibrary/carousel_view.dart';
 import 'package:widgetlibrary/grouped_buttons.dart';
 import 'package:widgetlibrary/icicicard/icici_card.dart';
 import 'package:widgetlibrary/sliding_listview.dart';
@@ -203,7 +204,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             '${newLocation.latitude}, ${newLocation.longitude}');
                       },
                       child: Text('${loc[0] ?? 0}, ${loc[1] ?? 0}')),
-                )
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return CarouselDemo();
+                      }));
+                    },
+                    child: Text("Carousel Demo")),
               ],
             ),
           ),
