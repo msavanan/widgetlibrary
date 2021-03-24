@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetlibrary/carousel_view.dart';
+import 'package:widgetlibrary/date_picker.dart';
 import 'package:widgetlibrary/grouped_buttons.dart';
 import 'package:widgetlibrary/icicicard/icici_card.dart';
 import 'package:widgetlibrary/sliding_listview.dart';
@@ -39,6 +40,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool enableMenu = false;
   double widthStack = 0;
+
+  var picked;
 
   Location newLocation = Location();
 
@@ -213,6 +216,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       }));
                     },
                     child: Text("Carousel Demo")),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return DatePicker();
+                      }));
+                    },
+                    child: Text('Date Picker'))
               ],
             ),
           ),
