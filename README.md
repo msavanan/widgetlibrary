@@ -11,3 +11,7 @@ Code need some use case currently the Widget library has few Widgets like
 6) Camera
 7) Sliding List View (animation works - background color need to be fixed to resemble close to uber)
 8) ICICI Card
+9) Carousel Demo
+10) Date Picker
+11) Sim information
+12) Neumorphic Design
