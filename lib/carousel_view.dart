@@ -7,7 +7,6 @@ class CarouselDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.grey,
       appBar: AppBar(),
       body: Column(mainAxisAlignment: MainAxisAlignment.center,
           //crossAxisAlignment: CrossAxisAlignment.start,

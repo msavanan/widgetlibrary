@@ -4,6 +4,9 @@ import 'package:widgetlibrary/carousel_view.dart';
 import 'package:widgetlibrary/date_picker.dart';
 import 'package:widgetlibrary/grouped_buttons.dart';
 import 'package:widgetlibrary/icicicard/icici_card.dart';
+import 'package:widgetlibrary/neumorphic_design.dart';
+//import 'package:widgetlibrary/sim/sim.dart';
+import 'package:widgetlibrary/sim/sim_information.dart';
 import 'package:widgetlibrary/sliding_listview.dart';
 import 'animateButton.dart';
 import 'camera_plugin.dart';
@@ -256,6 +259,31 @@ class _MyHomePageState extends State<MyHomePage> {
                             }));
                           },
                           child: Text('Date Picker')),
+                      /*ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      MobileNumberIdentifier()),
+                            );
+                          },
+                          child: Text(" Mobile Number"))*/
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => SimInformation()),
+                            );
+                          },
+                          child: Text("Sim Information")),
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return Neumorphic();
+                            }));
+                          },
+                          child: Text("Neumorphic Design"))
                     ],
                   ),
                 ),

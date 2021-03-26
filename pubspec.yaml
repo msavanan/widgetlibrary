@@ -32,6 +32,8 @@ dependencies:
   camera: ^0.8.0
   carousel_slider: ^3.0.0
   intl: ^0.17.0
+  mobile_number: ^1.0.3
+  sim_info: ^0.1.3
 
 dev_dependencies:
   flutter_test:
